@@ -6,10 +6,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .js,.vue,.ts,.tsx --ignore-path .gitignore ."
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.0"
+    "@types/node": "^18.17.3",
+    "nuxt": "^3.6.5",
+    "sass": "^1.65.1",
+    "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.0.0-rc.1",
+    "@nuxt/kit": "^3.6.5",
+    "@nuxtjs/tailwindcss": "^6.8.0"
   }
 }
