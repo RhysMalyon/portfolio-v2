@@ -1,9 +1,10 @@
 <template>
     <div>
-        <Loader />
-        <NuxtLayout>
-            <NuxtPage />
-        </NuxtLayout>
+        <!-- <Loader /> -->
+
+        <TheNav />
+        <NuxtPage />
+        <TheFooter />
     </div>
 </template>
 
