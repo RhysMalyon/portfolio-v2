@@ -1,6 +1,6 @@
 <template>
     <div v-if="isLoading" class="loader--text">
-        <div class="quote" ref="loaderText">Loading...</div>
+        <div class="text-content" ref="loaderText">Rhys Malyon</div>
     </div>
     <div v-if="isLoading" class="loader place-content-center" ref="loader">
         <div class="loader--column"></div>
@@ -46,8 +46,7 @@ const initLoadingAnim = () => {
         })
 
         tl.to(loaderText.value.split.chars, {
-            delay: 0.5,
-            duration: 1.5,
+            duration: 1,
             ease: 'power4.out',
             y: 100,
             stagger: 0.02
@@ -78,9 +77,7 @@ const initLoadingAnim = () => {
 }
 
 onMounted(() => {
-    if (!import.meta.env.SSR) {
-        window.addEventListener('load', initLoadingAnim)
-    }
+    initLoadingAnim()
 })
 
 onUnmounted(() => {
@@ -100,7 +97,6 @@ onUnmounted(() => {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
 
     overflow: hidden;
 
@@ -123,7 +119,7 @@ onUnmounted(() => {
         transform: translateX(-50%) translateY(-50%);
 
         font-size: calc(1rem * (1.618 * 3));
-        color: #fff;
+        color: $primary-accent;
 
         overflow: hidden;
     }
@@ -132,16 +128,15 @@ onUnmounted(() => {
         width: calc(100vw / 3);
         height: 100%;
 
-        background: #ff5200;
+        background: $neutral-dark;
     }
 }
 
-.quote {
+.text-content {
     width: 100vw;
 
     margin-top: 0px;
 
-    font-family: 'PTSerif', serif;
     font-size: 60px;
     text-align: center;
     line-height: 76px;

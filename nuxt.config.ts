@@ -4,14 +4,10 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
     routeRules: {
         '/': { prerender: true },
-        '/admin/**': { ssr: false }
     },
     build: {
         transpile: ['gsap']
     },
-    css: [
-        "~/assets/css/main.scss"
-    ],
     runtimeConfig: {
         gsapToken: process.env.NUXT_GSAP_TOKEN
     },
@@ -20,5 +16,14 @@ export default defineNuxtConfig({
     },
     image: {
         dir: 'public'
+    },
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "~/assets/css/main.scss";'
+                }
+            }
+        }
     }
 })

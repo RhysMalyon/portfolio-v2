@@ -1,7 +1,56 @@
+$neutral-light: #fffcf2;
+$neutral-medium: #ccc5b9;
+$neutral-dark: #403d39;
+$neutral-black: #252422;
+$primary-accent: #c64e1f;
+$primary-light: #ff9505;
+
 @font-face {
-    font-family: 'PTSerif';
-    src: local('PTSerif'), url('/fonts/PTSerif-Bold.ttf') format('truetype');
+    font-family: 'Cabinet Grotesk';
+    src: local('Cabinet Grotesk'), url('/fonts/CabinetGrotesk-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src: local('Cabinet Grotesk'), url('/fonts/CabinetGrotesk-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src: local('Cabinet Grotesk'), url('/fonts/CabinetGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src: local('Cabinet Grotesk'), url('/fonts/CabinetGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
+}
+
+body {
+    background-color: $neutral-light;
+    color: $neutral-dark;
+    font-family: 'Cabinet Grotesk', serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 2560px;
+
+    position: relative;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
